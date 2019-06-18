@@ -79,18 +79,19 @@ class RegistrationPage extends StatelessWidget {
                       Text(
                         "By continuing you agree to the ",
                         style: TextStyle(
+                          fontSize: 12,
                           color: Colors.grey,
                         ),
                       ),
-                      FlatButton(
-                        padding: EdgeInsets.all(0),
+                      GestureDetector(
                         child: Text(
                           "End User Agreement",
                           style: TextStyle(
                             color: Color(0xff0875b5),
+                            fontSize: 12,
                           ),
                         ),
-                        onPressed: () {},
+                        onTap: () {},
                       ),
                     ],
                   ),
@@ -99,29 +100,38 @@ class RegistrationPage extends StatelessWidget {
                       Text(
                         "and ",
                         style: TextStyle(
+                          fontSize: 12,
                           color: Colors.grey,
                         ),
                       ),
-                      FlatButton(
-                        onPressed: () {},
+                      GestureDetector(
+                        onTap: () {},
                         child: Text(
                           "Privacy Policy",
                           style: TextStyle(
+                            fontSize: 12,
                             color: Color(0xff0875b5),
                           ),
                         ),
-                        padding: EdgeInsets.all(0),
                       ),
                       Text(
-                        " of Add Health",
+                        " of ",
                         style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      Text(
+                        "Add Health",
+                        style: TextStyle(
+                          fontSize: 12,
                           color: Colors.grey,
                         ),
                       ),
                     ],
                   )
                 ],
-              )
+              ),
             ],
           ),
         ],

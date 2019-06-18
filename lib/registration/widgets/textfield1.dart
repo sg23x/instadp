@@ -18,7 +18,10 @@ class _TextField1State extends State<TextField1> {
               Container(
                 child: Text(
                   "Full Name",
-                  style: TextStyle(color: Colors.grey,fontSize: 12),
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12,
+                  ),
                 ),
               ),
             ],

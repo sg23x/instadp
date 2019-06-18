@@ -9,20 +9,38 @@ class _GenderState extends State<Gender> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.87,
-      child: Row(
+      padding: EdgeInsets.only(top: 20),
+      width: MediaQuery.of(context).size.width * 0.8,
+      child: Column(
         children: <Widget>[
-          Radio(),
-          Text(
-            "Male",
+          Row(
+            children: <Widget>[
+              Container(
+                child: Text(
+                  "Gender",
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+            ],
           ),
-          Radio(),
-          Text(
-            "Female",
-          ),
-          Radio(),
-          Text(
-            "Other",
+          Row(mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Radio(),
+              Text(
+                "Male",
+              ),
+              Radio(),
+              Text(
+                "Female",
+              ),
+              Radio(),
+              Text(
+                "Other",
+              ),
+            ],
           ),
         ],
       ),

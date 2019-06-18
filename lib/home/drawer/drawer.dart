@@ -73,7 +73,7 @@ class SideDrawer extends StatelessWidget {
                 color: Color(
                   0xff0875b5,
                 ),
-                fontSize: 30,
+                fontSize: 20,
               ),
             ),
           ),
