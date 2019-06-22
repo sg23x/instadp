@@ -82,9 +82,6 @@ flutter:
     - assets/support_1.png
     - assets/shopping_cart1.png
     - assets/location.jpg
-    - assets/loc2.jpg
-    - assets/locationn.jpg
-    - assets/gps.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
