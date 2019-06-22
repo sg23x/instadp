@@ -1,3 +1,4 @@
+import 'package:addhealth/src/UI/home/cards/detail/card1Page.dart';
 import 'package:flutter/material.dart';
 
 class Card1 extends StatelessWidget {
@@ -27,7 +28,11 @@ class Card1 extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: () => Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => Card1Page(),
+            ),
+          ),
     );
   }
 }

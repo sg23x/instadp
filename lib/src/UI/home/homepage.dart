@@ -7,6 +7,8 @@ import './cards/card_rows/card_row3.dart';
 import './banner.dart';
 import './drawer/drawer.dart';
 
+int counter = 0;
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -35,14 +37,40 @@ class HomePage extends StatelessWidget {
         actions: <Widget>[
           FlatButton(
             onPressed: () {},
-            child: Image.asset("assets/shopping_cart.png", scale: 1.7),
+            child: Stack(
+              children: <Widget>[
+                Image.asset("assets/shopping_cart.png", scale: 1.7),
+                new Positioned(
+                  right: 0,
+                  child: new Container(
+                    padding: EdgeInsets.all(1),
+                    decoration: new BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(6),
+                    ),
+                    constraints: BoxConstraints(
+                      minWidth: 12,
+                      minHeight: 12,
+                    ),
+                    child: new Text(
+                      '$counter',
+                      style: new TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ],
       ),
       drawer: SideDrawer(),
       body: ListView(
         children: <Widget>[
-          SeachBar(),
+          SearchBar(),
           SizedBox(
             height: 10,
           ),

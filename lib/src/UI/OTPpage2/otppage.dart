@@ -1,7 +1,9 @@
+import 'package:addhealth/src/UI/OTPpage2/otpVerify.dart';
 import 'package:flutter/material.dart';
 import './image.dart';
 import './submitbutton.dart';
 import './textfield.dart';
+import '../OTPpage2/otpVerify.dart' as otp2;
 
 class OTPPage2 extends StatelessWidget {
   @override
@@ -46,7 +48,7 @@ class OTPPage2 extends StatelessWidget {
                 ],
               ),
               Text(
-                "mobile number",
+                otp2.phoneNo ?? "Mobile Number",
                 style: TextStyle(
                   fontFamily: "RobotoCondensed-Regular",
                   fontSize: 30,
@@ -70,6 +72,56 @@ class OTPPage2 extends StatelessWidget {
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    "Did you not get your OTP?",
+                    style: TextStyle(
+                      // color: Colors.white,
+                      fontFamily: "Poppins-Regular",
+                      fontSize: 17,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  FlatButton(
+                    padding: EdgeInsets.all(0),
+                    onPressed: () => resendOtp(),
+                    child: Text(
+                      "Resend Otp  ",
+                      style: TextStyle(
+                        color: Color(0xff0875b5),
+                        fontFamily: "Poppins-Regular",
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    "|",
+                    style: TextStyle(
+                      // color: Colors.white,
+                      fontFamily: "Poppins-Regular",
+                      fontSize: 20,
+                    ),
+                  ),
+                  FlatButton(
+                    padding: EdgeInsets.all(0),
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: Text(
+                      "  Change Number",
+                      style: TextStyle(
+                        color: Color(0xff0875b5),
+                        fontFamily: "Poppins-Regular",
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                ],
               ),
               Column(
                 children: <Widget>[
