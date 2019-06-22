@@ -4,6 +4,14 @@ import './image.dart';
 import './textfield.dart';
 import './otpbutton.dart';
 
+
+String phoneNo;
+
+String areaCode = "+91";
+TextEditingController phoneNoController = TextEditingController();
+GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+
 class OTPPage1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

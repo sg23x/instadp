@@ -1,3 +1,5 @@
+import 'package:addhealth/src/UI/OTPpage1/otppage.dart' as otp1;
+import 'package:addhealth/src/function/validator.dart';
 import 'package:flutter/material.dart';
 
 class OTPTextField extends StatefulWidget {
@@ -35,12 +37,22 @@ class _OTPTextFieldState extends State<OTPTextField> {
                 width: 20,
               ),
               Flexible(
-                child: TextFormField(
-                  maxLength: 10,
-                  decoration: InputDecoration(
-                    counterText: "",
+                child: Form(
+                  key: otp1.formKey,
+                  child: TextFormField(
+                    controller: otp1.phoneNoController,
+                    onSaved: (value) {
+                      otp1.phoneNo = otp1.areaCode + value;
+                    },
+                    validator: (value) => validatePhone(
+                          value,
+                        ),
+                    maxLength: 10,
+                    decoration: InputDecoration(
+                      counterText: "",
+                    ),
+                    keyboardType: TextInputType.numberWithOptions(),
                   ),
-                  keyboardType: TextInputType.numberWithOptions(),
                 ),
               ),
             ],

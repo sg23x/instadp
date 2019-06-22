@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import '../registrationpage.dart' as reg;
 
-class TextField2 extends StatefulWidget {
+class TextField1 extends StatefulWidget {
   @override
-  _TextField2State createState() => _TextField2State();
+  _TextField1State createState() => _TextField1State();
 }
 
-class _TextField2State extends State<TextField2> {
+class _TextField1State extends State<TextField1> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,7 +18,7 @@ class _TextField2State extends State<TextField2> {
             children: <Widget>[
               Container(
                 child: Text(
-                  "Email Address",
+                  "Full Name",
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 12,
@@ -29,8 +30,15 @@ class _TextField2State extends State<TextField2> {
           Row(
             children: <Widget>[
               Flexible(
-                child: TextFormField(
-                  keyboardType: TextInputType.emailAddress,
+                child: Form(
+                  key: reg.fullNameFormKey,
+                  child: TextFormField(
+                    onSaved: (val) {
+                      return reg.item.fullName = val;
+                    },
+                    validator: (val) => val == "" ? val : null,
+                    keyboardType: TextInputType.text,
+                  ),
                 ),
               ),
             ],

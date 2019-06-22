@@ -1,5 +1,7 @@
+import 'package:addhealth/src/UI/OTPpage2/otpVerify.dart';
 import 'package:flutter/material.dart';
 import '../OTPpage2/otppage.dart';
+import 'package:addhealth/src/UI/OTPpage1/otppage.dart' as otp1;
 
 class OTPButton extends StatefulWidget {
   @override
@@ -7,6 +9,22 @@ class OTPButton extends StatefulWidget {
 }
 
 class _OTPButtonState extends State<OTPButton> {
+  validAndSubmit() {
+    var form = otp1.formKey.currentState;
+    print("form ${form}");
+    if (form.validate()) {
+      form.save();
+
+      verifyPhone(context);
+      // print("phonenumber 3: $phoneNo");
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => OTPPage2(),
+        ),
+      );
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
@@ -15,10 +33,11 @@ class _OTPButtonState extends State<OTPButton> {
       ),
       color: Color(0xff0875b5),
       onPressed: () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (BuildContext context) => OTPPage2()),
-        );
+        return validAndSubmit();
+        // Navigator.pushReplacement(
+        //   context,
+        //   MaterialPageRoute(builder: (BuildContext context) => OTPPage2()),
+        // );
       },
       elevation: 30,
       child: Text(

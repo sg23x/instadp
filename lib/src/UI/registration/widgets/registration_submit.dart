@@ -1,3 +1,4 @@
+import 'package:addhealth/src/UI/registration/registrationpage.dart';
 import 'package:flutter/material.dart';
 import '../../home/homepage.dart';
 
@@ -14,11 +15,16 @@ class _RegistrationButtonState extends State<RegistrationButton> {
         borderRadius: BorderRadius.circular(50),
       ),
       color: Color(0xff0875b5),
-      onPressed: () {Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => HomePage()),
-                  );},elevation: 30,
+      onPressed: () => handleSubmit(context),
+      // () {
+      //   Navigator.pushReplacement(
+      //     context,
+      //     MaterialPageRoute(
+      //       builder: (BuildContext context) => HomePage(),
+      //     ),
+      //   );
+      // },
+      elevation: 30,
       child: Text(
         "Submit",
         style: TextStyle(
